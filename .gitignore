@@ -1,0 +1,30 @@
+# For ModelSim
+
+work/
+
+*.cr.mti
+*.mpf
+*.mti
+*.wlf
+*.vstf
+*.bak
+transcript
+wlftq8bwzq
+tcl_stacktrace.txt
+
+# For Quartus
+
+db/
+incremental_db/
+output_files/
+
+*.qpf
+*.qsf
+*.qws
+
+!max10.qpf
+!max10.qsf
+
+# For Custom Files
+
+todo.txt
