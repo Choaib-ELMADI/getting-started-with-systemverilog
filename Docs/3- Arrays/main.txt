@@ -1,0 +1,21 @@
+1. Static Arrays:
+    * Static arrays in SystemVerilog are arrays whose size and dimensions are fixed at compile time.
+    * Once declared, their size cannot change during simulation.
+    * They can be "packed" or "unpacked", depending on how the elements are arranged in memory.
+
+    * Packed Arrays:
+        . Elements are stored contiguously in memory, in a single continuous block without gaps.
+        . They support bit-level operations, just like vectors.
+        . The dimensions are declared before the identifier name.
+        . Syntax examples:
+            > <data_type> [data_width] array_name;
+            > <data_type> [no_of_packs][data_width_of_each_pack] array_name;
+
+    * Unpacked Arrays:
+        . Elements may or may not be contiguous in memory and are stored as multiple rows.
+        . They store multiple elements and are typically used to represent memory or collections of data.
+        . The dimensions are declared after the identifier name.
+        . Syntax examples:
+            > <data_type> array_name [data_width];
+            > <data_type> array_name [no_of_rows][no_of_columns];
+            > <data_type> array_name [no_of_layers][no_of_rows][no_of_columns];

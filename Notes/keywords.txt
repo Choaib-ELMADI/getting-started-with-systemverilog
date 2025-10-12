@@ -1,0 +1,3 @@
+>> $display(): Used to print messages to the simulator terminal.
+└─► %b: display a variable in the binary format.
+└─► %d: display a variable in the decimal format.
