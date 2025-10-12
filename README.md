@@ -2,7 +2,7 @@
 
 # Getting Started with SystemVerilog
 
-**SystemVerilog (SV)** is an extension of **Verilog** designed for RTL design and verification. It combines hardware description and verification features, making it widely used in **ASIC** and **FPGA** design, simulation, and functional verification.
+SystemVerilog (SV) is an extension of Verilog designed for RTL design and verification. It combines hardware description and verification features, making it widely used in ASIC and FPGA design, simulation, and functional verification.
 
 <div align="center">
 
@@ -23,18 +23,12 @@ SystemVerilog enhances traditional Verilog with advanced features for both **des
 ## Key Differences Between Verilog and SystemVerilog
 
 | Feature      | Verilog                  | SystemVerilog                               |
-| ------------ | ------------------------ | ------------------------------------------- |
+| :----------- | :----------------------- | :------------------------------------------ |
 | Data Types   | reg, wire, integer, real | logic, bit, byte, int, struct               |
 | OOP          | NO                       | Supports classes, inheritance, polymorphism |
 | Arrays       | Static only              | Dynamic, associative, queues                |
 | Assertions   | NO                       | Supports assertions                         |
 | Verification | Manual                   | Automated with UVM                          |
-
-<div align="center">
-
-![Verilog vs SystemVerilog](./Images/verilog-vs-sv.png)
-
-</div>
 
 ## Data Types: Verilog vs SystemVerilog
 
@@ -43,7 +37,7 @@ SystemVerilog enhances traditional Verilog with advanced features for both **des
 Verilog is a **4-state language** because it represents hardware behavior more accurately by propagating unknown (`X`) and high-impedance (`Z`) states.
 
 | Data Type | Nature  | No. of Bits & Default Value | Characteristic of Data Type |
-| --------- | ------- | --------------------------- | --------------------------- |
+| :-------- | :------ | :-------------------------- | :-------------------------- |
 | wire      | 4-state | 1'bZ                        | unsigned                    |
 | reg       | 4-state | 1'bX                        | unsigned                    |
 | integer   | 4-state | 32'bX                       | signed                      |
@@ -55,7 +49,7 @@ Verilog is a **4-state language** because it represents hardware behavior more a
 SystemVerilog introduces **2-state data types** to improve simulation performance by removing `X` and `Z` states where unnecessary.
 
 | Data Type | Nature  | No. of Bits & Default Value | Characteristic of Data Type |
-| --------- | ------- | --------------------------- | --------------------------- |
+| :-------- | :------ | :-------------------------- | :-------------------------- |
 | logic     | 4-state | 1'bX                        | unsigned                    |
 | bit       | 2-state | 1'b0                        | unsigned                    |
 | byte      | 2-state | 8'b0                        | signed                      |
