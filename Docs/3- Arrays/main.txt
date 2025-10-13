@@ -22,6 +22,7 @@
 
 2. Dynamic Arrays:
     * Dynamic arrays in SystemVerilog are arrays whose size can be changed during simulation run-time.
+    * Dynamic arrays are better suited for contiguous collections that grow or shrink during run-time.
     * To declare a dynamic array, we just provide an empty square brackets after the identifier name.
     * The size can be specified during run-time using: new[size].
     * Syntax examples:
@@ -29,3 +30,16 @@
         > array_name = new[4];
         > array_name = new[10];
         > array_name = new[10](array_name);
+
+3. Associative Arrays:
+    * Associative arrays in SystemVerilog are used to store data in a sparse manner.
+    * Memory is allocated only when needed, unlike dynamic arrays where memory must be allocated beforehand.
+    * The index type is not limited to integers, it can be of any data type, such as string, class, or even enum.
+    * They act as "lookup tables", where each index serves as a unique key to access stored elements.
+    * Associative arrays are ideal when the size of the data set is unknown or the data space is sparse.
+    * Associative arrays handle scattered or key-based data efficiently.
+    * Syntax examples:
+        > <data_type> array_name [index_type];
+        > int a_array_1 [*];                    // Associative array of integers (unspecified index)
+        > bit [31:0] a_array_2 [string];        // Associative array of 32-bit elements, indexed by string
+        > event ev_array [myClass];             // Associative array of events, indexed by class
