@@ -6,7 +6,7 @@
     * Packed Arrays:
         . Elements are stored contiguously in memory, in a single continuous block without gaps.
         . They support bit-level operations, just like vectors.
-        . The dimensions are declared before the identifier name.
+        . The dimensions are declared "before" the identifier name.
         . Syntax examples:
             > <data_type> [data_width] array_name;
             > <data_type> [no_of_packs][data_width_of_each_pack] array_name;
@@ -14,8 +14,18 @@
     * Unpacked Arrays:
         . Elements may or may not be contiguous in memory and are stored as multiple rows.
         . They store multiple elements and are typically used to represent memory or collections of data.
-        . The dimensions are declared after the identifier name.
+        . The dimensions are declared "after" the identifier name.
         . Syntax examples:
             > <data_type> array_name [data_width];
             > <data_type> array_name [no_of_rows][no_of_columns];
             > <data_type> array_name [no_of_layers][no_of_rows][no_of_columns];
+
+2. Dynamic Arrays:
+    * Dynamic arrays in SystemVerilog are arrays whose size can be changed during simulation run-time.
+    * To declare a dynamic array, we just provide an empty square brackets after the identifier name.
+    * The size can be specified during run-time using: new[size].
+    * Syntax examples:
+        > <data_type> [data_width] array_name [];
+        > array_name = new[4];
+        > array_name = new[10];
+        > array_name = new[10](array_name);
