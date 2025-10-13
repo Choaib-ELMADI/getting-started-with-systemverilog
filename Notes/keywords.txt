@@ -1,3 +1,7 @@
 >> $display(): Used to print messages to the simulator terminal.
 └─► %b: display a variable in the binary format.
 └─► %d: display a variable in the decimal format.
+
+>> size(): Returns the current size of a dynamic array.
+>> delete(): Deletes a dynamic array.
+>> new[]: Used to create, resize, and copy dynamic arrays.
