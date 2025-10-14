@@ -1,0 +1,19 @@
+1. Classes:
+    * Classes in SystemVerilog are user-defined data types that combine both data and the subroutines (functions or tasks) that operate on that data.
+    * They enable object-oriented programming (OOP) concepts such as encapsulation and dynamic object creation.
+    * The data within a class are called "properties", and the subroutines are called "methods".
+    * Objects of a class are created dynamically at run-time using a handle (similar to a pointer).
+    * If an object is not created, its handle has the default value "null".
+    * Classes are declared using the "class" and "endclass" keywords.
+
+    * Constructors:
+        . A constructor is a special method named "new" that is automatically called when an object is created.
+        . It is used to initialize class properties during object creation.
+        . If no constructor is defined, SystemVerilog provides a default empty one.
+        . Constructors can also take arguments to set initial values.
+
+    * Syntax example:
+        > class class_name;
+        >   // Properties
+        >   // Methods
+        > endclass // class_name
