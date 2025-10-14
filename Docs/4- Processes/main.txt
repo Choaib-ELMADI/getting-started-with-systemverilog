@@ -1,0 +1,16 @@
+1. Processes:
+    * Processes in SystemVerilog are used to control the flow of execution, either sequentially or in parallel.
+    * They define how multiple statements are grouped and executed in simulation time.
+    * The two primary ways to group statements are using "begin...end" (sequential execution) and "fork...join" (parallel execution).
+
+    * Sequential Block (begin...end):
+        . Groups two or more statements together so they execute one after another.
+        . Each timing control is relative to the previous statement.
+        . Useful when the order of operations matters.
+
+    * Parallel Block (fork...join):
+        . Groups two or more statements together so they execute concurrently.
+        . All statements start at the same simulation time.
+        . The simulation waits until all parallel processes finish before continuing (join).
+        . Simulation continues as soon as any one process finishes (join_any).
+        . Simulation immediately continues without waiting for any process to complete (join_none).

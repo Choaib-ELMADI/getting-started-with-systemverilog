@@ -2,6 +2,7 @@
 └─► %b: display a variable in the binary format.
 └─► %d: display a variable in the decimal format.
 └─► %p: display an array variable.
+└─► %t: display a time variable.
 
 >> size(): Returns the current size of a dynamic array.
 >> delete(): Deletes a dynamic array.
@@ -11,3 +12,11 @@
 >> pop_front(): Removes an element from the beginning of a queue.
 >> push_front(): Adds an element at the beginning of a queue.
 >> pop_back(): Removes an element from the end of a queue.
+
+>> #number: Used to create a delay of 'number' time units.
+>> $time: Returns current simulation time.
+>> $finish: Used to finish the simulation.
+
+>> fork ... join: Used to execute multiple processes in parallel. The simulation waits until all processes finish before continuing.
+>> fork ... join_any: Starts multiple processes in parallel, but continues once any one of them finishes.
+>> fork ... join_none: Starts multiple processes in parallel and immediately continues without waiting for any to complete.
