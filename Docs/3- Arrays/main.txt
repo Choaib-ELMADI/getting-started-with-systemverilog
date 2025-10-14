@@ -43,3 +43,20 @@
         > int a_array_1 [*];                    // Associative array of integers (unspecified index)
         > bit [31:0] a_array_2 [string];        // Associative array of 32-bit elements, indexed by string
         > event ev_array [myClass];             // Associative array of events, indexed by class
+
+4. Queues:
+    * Queues in SystemVerilog are special array types that operate on the FIFO (First In, First Out) principle.
+    * The element that is inserted first is also the first to be removed, similar to a real-world queue.
+    * Queues are useful when the number of elements changes dynamically, and you want to process data in order.
+
+    * Types of queues:
+        . Bounded Queue: Has a fixed, limited number of entries.
+        . Unbounded Queue: Has no predefined limit on the number of entries.
+
+    * Syntax examples:
+        > <data_type> queue_name [$];
+        > int  first_queue [$];                 // Unbounded queue of ints
+        > bit  q_1         [$];                 // Unbounded queue of bits
+        > byte q_2         [$];                 // Unbounded queue of bytes
+        > int  q_3         [$:9];               // Bounded queue with 10 elements (index range 0-9)
+        > int  q_4         [$] = { 5, 6, 7 };   // Unbounded queue initialized with elements

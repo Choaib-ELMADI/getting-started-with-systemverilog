@@ -1,7 +1,13 @@
 >> $display(): Used to print messages to the simulator terminal.
 └─► %b: display a variable in the binary format.
 └─► %d: display a variable in the decimal format.
+└─► %p: display an array variable.
 
 >> size(): Returns the current size of a dynamic array.
 >> delete(): Deletes a dynamic array.
 >> new[]: Used to create, resize, and copy dynamic arrays.
+
+>> push_back(): Adds an element at the end of a queue.
+>> pop_front(): Removes an element from the beginning of a queue.
+>> push_front(): Adds an element at the beginning of a queue.
+>> pop_back(): Removes an element from the end of a queue.
