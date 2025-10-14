@@ -12,7 +12,7 @@ class packet;
         $display("Inside print function of pakcet!");
     endfunction // print
 
-    function get();
+    function int get();
         return x;
     endfunction // get
 

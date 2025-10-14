@@ -17,3 +17,11 @@
         >   // Properties
         >   // Methods
         > endclass // class_name
+
+2. Inheritance:
+    * Inheritance in SystemVerilog allows one class (child, derived class) to reuse and extend the functionality of another class (base, parent class).
+    * It promotes code reusability and modularity in object-oriented design.
+    * The keyword "extends" is used to define a child class that inherits from a parent class.
+    * The child class gains access to all properties and methods of its parent class and can also define new ones.
+    * A child class can override methods of the parent class to modify their behavior without altering the parent's implementation.
+    * SystemVerilog also supports multilevel inheritance, where a derived class can itself be extended by another class.
