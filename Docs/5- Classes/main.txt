@@ -43,3 +43,10 @@
     * When a method is called using a base class handle, the actual implementation executed depends on the object's type at run-time, not the handle type.
     * A base class handle can dynamically reference different derived class objects at run-time.
     * This enables flexible and reusable designs where behavior can vary dynamically across different subclasses.
+
+6. Virtual Classes:
+    * In SystemVerilog, a virtual class (aka an abstract class) is a special kind of base class that cannot be instantiated directly.
+    * It serves as a blueprint for other classes, defining a common structure and behavior that derived classes can extend and implement.
+    * Virtual classes are mainly used to enforce consistent interfaces across multiple derived classes.
+    * A virtual class can include both implemented methods and pure virtual methods (methods without implementation).
+    * A pure virtual method is declared using the keyword "pure virtual", and must be implemented by any class that extends the virtual class.
