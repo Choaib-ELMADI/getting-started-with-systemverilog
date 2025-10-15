@@ -25,3 +25,21 @@
     * The child class gains access to all properties and methods of its parent class and can also define new ones.
     * A child class can override methods of the parent class to modify their behavior without altering the parent's implementation.
     * SystemVerilog also supports multilevel inheritance, where a derived class can itself be extended by another class.
+
+3. "super" Keyword:
+    * The "super" keyword is used inside a child (derived) class to access members of its immediate parent (base) class.
+    * When a derived class overrides a method or property from the parent class, super allows access to the original version from the base class.
+    * It is commonly used within the child class constructor to call the parent class constructor and initialize inherited properties.
+
+4. "this" Keyword:
+    * The "this" keyword refers to the current instance of a class.
+    * It is used to distinguish between class properties and local variables or parameters that have the same name.
+    * It acts as a handle to the object itself, allowing access to its members explicitly.
+
+5. Polymorphism:
+    * Polymorphism in SystemVerilog refers to the ability of an object or method to take on multiple forms.
+    * It allows one interface (a base class handle) to represent different underlying data types (derived class objects).
+    * This concept is enabled through "virtual" methods, where a method declared as "virtual" in the base class can be overridden in derived classes.
+    * When a method is called using a base class handle, the actual implementation executed depends on the object's type at run-time, not the handle type.
+    * A base class handle can dynamically reference different derived class objects at run-time.
+    * This enables flexible and reusable designs where behavior can vary dynamically across different subclasses.
