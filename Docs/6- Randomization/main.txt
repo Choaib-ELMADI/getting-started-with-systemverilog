@@ -7,3 +7,13 @@
         > rand  bit [3:0] addr; // 'addr' will take random 4-bit values from 0 to 15
         > randc bit [3:0] data; // 'data' takes random 4-bit values (0-15) with no repeats until all values are used
         > p.randomize();        // Used to trigger randomization of variables or class objects
+
+2. Constraints:
+    * Constraints restrict randomization so generated values meet design-specific requirements.
+    * They are essential when the DUT only accepts inputs within certain ranges or relationships.
+    * A constraint block groups one or more conditions for random variables.
+    * Syntax examples:
+        > constraint constraint_name  { <expression / condition>; }
+        > constraint range_constraint { value >= 10; value <= 50; }
+        > constraint set_constraint   { value inside { 1, 2, 3 }; }
+        > constraint relational_constraint { value1 > value2; }
