@@ -13,7 +13,16 @@
     * They are essential when the DUT only accepts inputs within certain ranges or relationships.
     * A constraint block groups one or more conditions for random variables.
     * Syntax examples:
-        > constraint constraint_name  { <expression / condition>; }
+        > constraint constraint_name  { [soft] <expression / condition>; }
         > constraint range_constraint { value >= 10; value <= 50; }
         > constraint set_constraint   { value inside { 1, 2, 3 }; }
         > constraint relational_constraint { value1 > value2; }
+
+3. Inline Constraints:
+    * Constraints can also be defined inline.
+    * Inline constraints are useful when constraints need to be modified during randomization.
+    * They are often used in "Sequence" or "Generator" classes to adjust constraints dynamically.
+    * Inline constraints should not conflict with existing class constraints to prevent randomization failure.
+    * Syntax examples:
+        > item.randomize with { val1 > 150; val1 < 160; };  // 'item' is a handle
+        > item.randomize with { val2 inside {[10:15]}; };   // 'item' is a handle
