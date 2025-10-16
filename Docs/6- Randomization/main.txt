@@ -1,0 +1,9 @@
+1. Randomization:
+    * In SystemVerilog, randomization is the process of assigning random values to variables or class properties.
+    * Randomization is a key feature in verification, allowing engineers to test various scenarios automatically without manually defining each case.
+    * Verilog provides the $random system function for generating random integers, but it has limitations when working with class objects.
+    * To make object randomization easier and more powerful, SystemVerilog introduces the "rand" and "randc" keywords, along with the "randomize()" method.
+    * Syntax examples:
+        > rand  bit [3:0] addr; // 'addr' will take random 4-bit values from 0 to 15
+        > randc bit [3:0] data; // 'data' takes random 4-bit values (0-15) with no repeats until all values are used
+        > p.randomize();        // Used to trigger randomization of variables or class objects
