@@ -1,0 +1,16 @@
+1. Mailbox:
+    * A mailbox in SystemVerilog is a communication mechanism used for message passing between different processes or threads.
+    * Commonly used in testbenches to transfer data between generators, drivers, monitors, and scoreboards safely.
+    * Operates as a FIFO (First In, First Out) buffer, messages are sent and received in order.
+    * Supports thread synchronization, the receiver waits if the mailbox is empty.
+
+    * Blocking and Non-blocking Methods:
+        . put(): Puts a message into the mailbox.
+        . get(): Blocking method; waits until a message is available.
+        . try_get(): Non-blocking method; returns immediately if no message is available.
+        . num(): Returns the number of messages currently stored in the mailbox.
+
+    * Syntax examples:
+        > mailbox gen2drv;      // mailbox between generator and driver
+        > gen2drv.put(trans);   // put transaction into mailbox
+        > gen2drv.get(trans);   // blocking get() call
