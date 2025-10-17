@@ -14,3 +14,11 @@
         > mailbox gen2drv;      // mailbox between generator and driver
         > gen2drv.put(trans);   // put transaction into mailbox
         > gen2drv.get(trans);   // blocking get() call
+
+2. Semaphore:
+    * A semaphore in SystemVerilog is a token-based locking mechanism used to control access to shared resources between concurrent processes.
+    * Ensures mutual exclusion, preventing race conditions when multiple processes access the same resource.
+    * Blocking and Non-blocking Methods:
+        . get(n): Blocking method; waits until n tokens are available.
+        . try_get(n): Non-blocking method; returns immediately if n tokens are unavailable.
+        . put(n): Releases n tokens back to the semaphore.
