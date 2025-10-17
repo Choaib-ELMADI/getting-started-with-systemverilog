@@ -26,3 +26,22 @@
     * Syntax examples:
         > item.randomize with { val1 > 150; val1 < 160; };  // 'item' is a handle
         > item.randomize with { val2 inside {[10:15]}; };   // 'item' is a handle
+
+4. Implication Constraints:
+    * The implication operator is used to define conditional relationships between variables.
+    * It is represented by the symbol "->".
+    * The operator is placed between a condition (expression) and its constraint.
+    * Syntax examples:
+        > expression -> constraint
+        > rand bit [3:0] addr;
+        > string addr_range;
+        > constraint address_range { (addr_range == "small") -> (addr < 8); }
+
+5. Other:
+    * If-else constraints
+    * Array constraints (size, elements)
+    * Static constraints
+    * Functions is constraints
+    * Unique constraints
+    * Disable\Enable randomization: rand_mode(0), rand_mode(1)
+    * Disable\Enable constraints: constraint_mode(0), constraint_mode(1)
