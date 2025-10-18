@@ -59,6 +59,51 @@ SystemVerilog introduces **2-state data types** to improve simulation performanc
 | time      | 4-state | 32'bX                       | -                           |
 | shortreal | 2-state | 0.0                         | floating-point              |
 
+## SystemVerilog Testbench Architecture
+
+SystemVerilog provides an advanced, object-oriented approach for building testbenches that verify the functionality of a Design Under Test (DUT).
+
+A typical SystemVerilog testbench is composed of modular components, each serving a specific role in generating, driving, and verifying data.
+
+<div align="center">
+
+![SystemVerilog Testbench Architecture](./Images/sv-testbench-arch.png)
+
+</div>
+
+| Component   | Description                                                                                                                          |
+| :---------- | :----------------------------------------------------------------------------------------------------------------------------------- |
+| Generator   | Produces input stimulus or test vectors to drive the DUT. It can create random or constrained-random data for comprehensive testing. |
+| Driver      | Retrieves transactions from the generator and drives the corresponding signals to the DUT through the interface.                     |
+| Interface   | Defines a set of signals and methods that connect the DUT and the testbench, simplifying connectivity and reusability.               |
+| Monitor     | Passively observes DUT signals (inputs and outputs) to capture real-time behavior and transactions.                                  |
+| Scoreboard  | Compares the DUT's actual outputs with expected results, detecting functional mismatches or design bugs.                             |
+| Environment | Serves as a container that instantiates and connects all verification components (generator, driver, monitor, scoreboard).           |
+| Test        | Controls simulation execution and test configuration, creating the environment and initiating the verification sequence.             |
+
+## UVM Testbench Architecture
+
+The **Universal Verification Methodology** (UVM) builds upon SystemVerilog’s object-oriented and constrained random features.
+
+It standardizes the structure of verification environments, promoting reusability, scalability, and consistency across projects.
+
+<div align="center">
+
+![UVM Testbench Architecture](./Images/uvm-testbench-arch.png)
+
+</div>
+
+| Component             | Description                                                                                              |
+| :-------------------- | :------------------------------------------------------------------------------------------------------- |
+| Sequence / Sequencer  | Generates transactions in a controlled sequence and sends them to the driver.                            |
+| Driver                | Converts high-level transactions into pin-level activity on the DUT interface.                           |
+| Interface             | Groups DUT signals and provides task/function hooks for drivers and monitors to drive or sample signals. |
+| Monitor               | Collects transactions from the DUT interface and sends them for checking or coverage analysis.           |
+| Scoreboard            | Performs result checking by comparing DUT outputs with expected results or reference models.             |
+| Agent                 | Groups the driver, monitor, and sequencer together for modular, reusable communication blocks.           |
+| Environment (uvm_env) | Top-level verification container that holds agents, scoreboards, and coverage collectors.                |
+| Test (uvm_test)       | Defines and configures the environment, controlling simulation flow and test objectives.                 |
+
 ## Recommended Tools
 
 To write, simulate, and debug SystemVerilog code, you can use the following tools:
