@@ -146,3 +146,7 @@ These guides cover how to:
 - Set up a SystemVerilog project
 - Write and compile testbenches
 - Run simulations and analyze waveforms
+
+## Related Work
+
+If you're new to Verilog or want to brush up on the basics, check out this repo: [Getting Started with Verilog](https://github.com/Choaib-ELMADI/getting-started-with-verilog)! It covers Verilog basics and fundamental concepts that make learning SystemVerilog easier.
