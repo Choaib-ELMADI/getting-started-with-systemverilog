@@ -8,9 +8,9 @@
 
 module testbench_top;
 
-    test       test_inst(interface_inst);
-
     interface_ interface_inst();
+
+    test       test_inst(interface_inst);
 
     full_adder DUT(
         .a(interface_inst.a),

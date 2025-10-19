@@ -1,5 +1,5 @@
 class driver;
-    virtual interface_ vir_interface_inst();
+    virtual interface_ vir_interface_inst;
 
     mailbox gen2drv;
 

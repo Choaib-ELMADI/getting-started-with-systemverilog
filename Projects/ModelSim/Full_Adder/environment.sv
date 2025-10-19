@@ -1,5 +1,5 @@
 `include "generator.sv"
-`include "transaction.sv"
+`include "interface_.sv"
 `include "driver.sv"
 `include "monitor.sv"
 `include "scoreboard.sv"
@@ -13,7 +13,7 @@ class environment;
     mailbox gen2drv;
     mailbox mnt2scb;
 
-    virtual interface_ vir_interface_inst();
+    virtual interface_ vir_interface_inst;
 
     function new(interface_ vir_interface_inst);
         this.vir_interface_inst = vir_interface_inst;

@@ -4,7 +4,7 @@ module full_adder (
 );
 
     // s = a xor b xor c_in
-    assign s = a ^ b ^ c;
+    assign s = a ^ b ^ c_in;
 
     // c_out = (a and b) or (c_in and (a xor b))
     assign c_out = (a & b) | (c_in & (a ^ b));

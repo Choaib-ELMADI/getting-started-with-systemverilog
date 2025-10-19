@@ -1,3 +1,5 @@
+`include "transaction.sv"
+
 class generator;
     transaction trans;
 

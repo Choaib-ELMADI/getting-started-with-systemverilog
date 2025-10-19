@@ -1,5 +1,5 @@
 class monitor;
-    virtual interface_ vir_interface_inst();
+    virtual interface_ vir_interface_inst;
 
     mailbox mnt2scb;
 
@@ -9,10 +9,13 @@ class monitor;
     endfunction // new
 
     task main();
+        transaction trans;
+
         repeat (2) begin
             #1;
 
-            transaction trans = new();
+            trans = new();
+
             trans.a     = vir_interface_inst.a;
             trans.b     = vir_interface_inst.b;
             trans.c_in  = vir_interface_inst.c_in;

@@ -14,7 +14,7 @@ class scoreboard;
 
             // Reference module | Golden DUT
             if (
-                ((trans.a ^ trans.b ^ trans.c) == trans.s) &&
+                ((trans.a ^ trans.b ^ trans.c_in) == trans.s) &&
                 (((trans.a & trans.b) | (trans.c_in & (trans.a ^ trans.b))) == trans.c_out)
             )
                 $display("***** PASS *****");
