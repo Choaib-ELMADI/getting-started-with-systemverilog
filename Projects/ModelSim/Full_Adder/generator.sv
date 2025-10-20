@@ -9,10 +9,14 @@ class generator;
         this.gen2drv = gen2drv;
     endfunction // new
 
-    task main();
+    task main;
         repeat (2) begin
             trans = new();
-            trans.randomize();
+            if (!trans.randomize()) begin
+                $display("ERROR IN GENERATOR TRANSACTION RANDOMIZATION");
+                $finish;
+            end
+
             trans.display("GENERATOR CLASS SIGNALS");
             gen2drv.put(trans);
         end

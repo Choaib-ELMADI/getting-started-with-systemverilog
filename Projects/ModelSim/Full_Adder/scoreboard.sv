@@ -1,8 +1,13 @@
+`include "transaction.sv"
+
 class scoreboard;
     mailbox mnt2scb;
 
-    function new(mailbox mnt2scb);
-        this.mnt2scb = mnt2scb;
+    // function new(mailbox mnt2scb);
+    //     this.mnt2scb = mnt2scb;
+    // endfunction // new
+
+    function new();
     endfunction // new
 
     task main();

@@ -1,5 +1,5 @@
 `include "generator.sv"
-`include "interface_.sv"
+`include "full_adder_if.sv"
 `include "driver.sv"
 `include "monitor.sv"
 `include "scoreboard.sv"
@@ -13,18 +13,26 @@ class environment;
     mailbox gen2drv;
     mailbox mnt2scb;
 
-    virtual interface_ vir_interface_inst;
+    virtual full_adder_if vir_interface_inst;
 
-    function new(interface_ vir_interface_inst);
+    function new(virtual full_adder_if vir_interface_inst);
         this.vir_interface_inst = vir_interface_inst;
 
         gen2drv = new();
         mnt2scb = new();
 
         gen = new(gen2drv);
-        drv = new(vir_interface_inst, gen2drv);
-        mnt = new(vir_interface_inst, mnt2scb);
-        scb = new(mnt2scb);
+        drv = new();
+        mnt = new();
+        scb = new();
+
+        drv.vir_interface_inst = vir_interface_inst;
+        drv.gen2drv = gen2drv;
+
+        mnt.vir_interface_inst = vir_interface_inst;
+        mnt.mnt2scb = mnt2scb;
+
+        scb.mnt2scb = mnt2scb;
     endfunction // new
 
     task test_run();

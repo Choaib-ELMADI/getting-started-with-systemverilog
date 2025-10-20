@@ -1,4 +1,4 @@
-interface interface_;
+interface full_adder_if;
 
     // Signals
     logic a, b, c_in;
@@ -8,4 +8,4 @@ interface interface_;
 
     // Modport
 
-endinterface // interface_
+endinterface // full_adder_if

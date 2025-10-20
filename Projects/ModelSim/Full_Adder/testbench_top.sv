@@ -8,7 +8,7 @@
 
 module testbench_top;
 
-    interface_ interface_inst();
+    full_adder_if interface_inst();
 
     test       test_inst(interface_inst);
 

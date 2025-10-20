@@ -1,6 +1,6 @@
 `include "environment.sv"
 
-program test(interface_ interface_inst);
+program test(full_adder_if interface_inst);
     environment env;
 
     initial begin

@@ -1,11 +1,16 @@
+`include "transaction.sv"
+
 class monitor;
-    virtual interface_ vir_interface_inst;
+    virtual full_adder_if vir_interface_inst;
 
     mailbox mnt2scb;
 
-    function new(virtual interface_ vir_interface_inst, mailbox mnt2scb);
-        this.vir_interface_inst = vir_interface_inst;
-        this.mnt2scb = mnt2scb;
+    // function new(virtual full_adder_if vir_interface_inst, mailbox mnt2scb);
+    //     this.vir_interface_inst = vir_interface_inst;
+    //     this.mnt2scb = mnt2scb;
+    // endfunction // new
+
+    function new();
     endfunction // new
 
     task main();

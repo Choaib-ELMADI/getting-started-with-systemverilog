@@ -1,3 +1,6 @@
+`ifndef TRANSACTION_SV
+`define TRANSACTION_SV
+
 class transaction;
     rand bit a, b, c_in;
     bit      s, c_out;
@@ -9,3 +12,5 @@ class transaction;
     endfunction // display
 
 endclass // transaction
+
+`endif
