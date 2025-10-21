@@ -132,14 +132,43 @@ To run and simulate SystemVerilog code, you will need the following tools. Below
   - Select: **Individual Files**
   - Under **Devices**, download: **MAX® 10 FPGA device support**
 
-Place all the downloaded files in the same directory, then launch `Quartus Prime Lite` and `ModelSim` to begin your workflow.
+- **QuestaSim**: A professional logic simulator with extended SystemVerilog support - [Download link](https://drive.google.com/file/d/1Gr6EmE4k0SMv50AsQ_ktv3xQOWEh-qE3/view):
+
+  - Extract the downloaded files.
+  - Run `questasim-win64-10.7c_DownLoadLy.iR.exe` as **administrator**.
+  - Follow the installation steps.
+  - When prompted with **"Install Hardware Security Key Driver"**, click **No**, then **Done**.
+  - Run `regassistuvm_4.9_win_DownLoadLy.iR.exe` as **administrator**.
+  - In the **"Target Location Selection"** popup, choose the folder where QuestaSim is installed, then continue and finish.
+  - In the extracted folder, go to `Crack\Other\2`.
+  - Copy the files: `MentorKG.exe`, `MGLS.DLL`, and `Patch_DownLoadLy.iR.bat`.
+  - Paste them inside the **win64** folder located in your QuestaSim installation directory.
+  - Run `Patch_DownLoadLy.iR.bat` and wait for the `LICENSE.txt` file to be generated.
+  - Copy the license file’s path.
+  - Open **System Environment Variables** and add the following entries under **System variables**:
+
+    - `Variable name`: `MGLS_LICENSE_FILE`  
+      `Variable value`: _Path to your LICENSE.txt file_
+
+    - `Variable name`: `LM_LICENSE_FILE`  
+      `Variable value`: _Path to your LICENSE.txt file_
+
+  - Finally, delete the three files you pasted earlier (`MentorKG.exe`, `MGLS.DLL`, `Patch_DownLoadLy.iR.bat`).
+  - Congratulations! QuestaSim is now ready to use.
+
+If you face any issues setting up **ModelSim**, **Quartus Prime Lite**, or **QuestaSim**, feel free to contact me:
+
+- **choaibamd@gmail.com**
+- **choaibemd@gmail.com**
+- **+212 643 241 400**
 
 ## How to Use Simulation Tools
 
-Once you have installed **ModelSim** and **Quartus Prime Lite**, you can follow the guides below to learn how to set up and run simulations:
+Once you have installed **ModelSim**, **Quartus Prime Lite**, and **QuestaSim**, you can follow the guides below to learn how to set up and run simulations:
 
 - **Using ModelSim**: [Step-by-step guide](./Projects/ModelSim/README.md)
 - **Using Quartus Prime Lite**: [Step-by-step guide](./Projects/Quartus/README.md)
+- **Using QuestaSim**: [Step-by-step guide](./Projects/QuestaSim/README.md)
 
 These guides cover how to:
 
