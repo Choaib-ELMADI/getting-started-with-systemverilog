@@ -21,7 +21,11 @@ module randomization_tb;
     initial begin
 
         r = new();
-        r.run();
+
+        repeat (16) begin
+            r.run();
+            $display("****************************");
+        end
 
     end
 
