@@ -1,0 +1,18 @@
+1. What is SystemVerilog:
+    * SystemVerilog is an extension of Verilog that adds powerful verification features and object-oriented programming (OOP) concepts.
+    * It allows engineers to verify designs using complex testbench structures and random stimuli during simulation.
+    * Hardware Description Languages (HDL) like Verilog and VHDL describe hardware behavior so it can be converted into digital circuits.
+
+2. Why Verilog is not preferred:
+    * Verilog was designed in the 1990s for small and simple designs.
+    * It lacks modern features needed for complex verification tasks.
+    * SystemVerilog advantages:
+        . Constrained random stimulus generation.
+        . OOP-based testbench construction.
+        . Functional coverage and assertions.
+        . Scalable and structured verification flow.
+
+3. Verification:
+    * Verification ensures that a hardware design works as intended.
+    * Catching bugs early saves time, cost, and resources.
+    * Late-found bugs may require a respin of the chip, redoing multiple design steps.
