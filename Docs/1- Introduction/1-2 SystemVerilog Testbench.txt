@@ -1,0 +1,49 @@
+1. Purpose of a testbench:
+    * A testbench allows verification of a design through simulation.
+    * It acts as a container where the design is instantiated and driven with different input stimulus.
+    * Main objectives:
+        . Generate different types of input stimulus.
+        . Drive the design inputs with the generated stimulus.
+        . Allow the design to process input and produce output.
+        . Check output against expected behavior to find functional defects.
+        . Update design if functional bugs are found.
+        . Repeat the process until the design is verified.
+
+2. Components of a testbench:
+    * A modular, reusable, and scalable testbench contains the following components:
+        . Generator:
+            |> Generates different input stimulus to be driven to the DUT.
+
+        . Interface:
+            |> Groups all design signals into a container for easier connectivity.
+            |> Simplifies driving and monitoring of the DUT.
+
+        . Driver:
+            |> Drives the generated stimulus to the DUT via tasks in the interface.
+            |> Abstracts timing and pin-level details from the generator.
+
+        . Monitor:
+            |> Observes DUT outputs.
+            |> Converts processed signals into data objects for analysis.
+
+        . Scoreboard:
+            |> Contains a reference model that reflects expected DUT behavior.
+            |> Compares DUT outputs with the reference model to detect functional defects.
+
+        . Environment:
+            |> Contains all verification components.
+            |> Provides flexibility and scalability for future projects.
+
+        . Test:
+            |> Instantiates and configures the environment for simulation.
+            |> Tweaks parameters in the environment to control stimulus generation.
+
+3. DUT (Design Under Test):
+    * The hardware design written in Verilog or VHDL.
+    * In pre-validation: called Design Under Verification (DUV).
+    * In post-validation: referred to as DUT after fabrication.
+
+4. Abstraction levels:
+    * Hiding implementation details while exposing only necessary interfaces.
+    * Example: Instead of manually toggling signals, implement the logic in a task.
+    * Abstraction improves reusability, scalability, and readability of the testbench.
