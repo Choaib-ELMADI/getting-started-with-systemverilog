@@ -1,0 +1,37 @@
+1. Value system:
+    * Variables and nets can hold four logic states:
+        . '0'   : Logic 0 (0 volts)
+        . '1'   : Logic 1 (> 0.7 volts)
+        . 'x/X' : Unknown logic state
+        . 'z/Z' : High impedance
+
+2. Enhanced (') literal:
+    * Allows initializing all bits of a vector with a single value, including logic 1.
+    * Syntax Examples:
+        > reg  [7:0] a; a = '1; // a = 8'b1111_1111
+        > reg [15:0] b; b = '1; // b = 16'b1111_1111_1111_1111
+
+3. Floating point / Exponential numbers:
+    * Real numbers and exponential notation are supported.
+    * Syntax Examples:
+        > real pi   = 3.14;
+        > real freq = 1e12;
+
+4. Strings:
+    * Use 'string' or 'bit' arrays to store text.
+    * Syntax Examples:
+        > string       msg1 = "Hello World";
+        > bit [8*11:1] msg2 = "Hello World";
+
+5. Structures:
+    * Groups multiple variables of different types.
+    * Syntax Example:
+        > typedef struct { int coins; real dollars; } s_money;
+        > s_money wallet = '{5, 19.75};
+
+6. Real to Int conversion:
+    * Real numbers round to the nearest integer when assigned to integer types.
+    * Syntax Examples:
+        > int     a = int'(2.7 * 3);    // Casting will perform rounding
+        > integer b = $rtoi(3.7);       // Using system tasks will truncate
+        > real    r = $itor(int_val);   // Using system tasks will truncate
