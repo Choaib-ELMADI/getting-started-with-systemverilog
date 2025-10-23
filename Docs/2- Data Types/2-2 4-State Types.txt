@@ -1,0 +1,15 @@
+1. Signal Types and Data Types:
+    * In SystemVerilog, every signal has both:
+        . Type: specifies whether the signal is a "net" or a "variable".
+        . Data Type: defines the possible logic values a signal can take (0, 1, X, Z).
+
+2. 4-State Data Types:
+    * These types can hold four logic values: 0, 1, X (unknown), and Z (high-impedance).
+    * In Verilog:
+        . Nets (e.g., wire) are used in continuous assignments.
+        . Variables (e.g., reg) are used in procedural blocks (always, initial).
+
+3. "logic" Data Type:
+    * "logic" is a 4-state data type introduced by SystemVerilog.
+    * It can be driven in both procedural blocks and continuous assignments.
+    * If a signal has multiple drivers, it must be declared as a net type so SystemVerilog can resolve the final value.
