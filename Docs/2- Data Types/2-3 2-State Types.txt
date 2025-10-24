@@ -1,0 +1,31 @@
+1. 2-State Data Types:
+    * These data types can only represent two values: "0" and "1".
+    * They require less memory and simulate faster than 4-state types.
+    * Common 2-state types include "bit", "byte", "shortint", "int", and "longint".
+
+2. "bit" Data Type:
+    * A 2-state type that can hold binary values "0" or "1", defaulting to "0".
+    * Commonly used in testbenches where "X" and "Z" are unnecessary.
+
+3. "byte" Data Type:
+    * An 8-bit signed integer type (two's complement).
+
+4. Integer Data Types ("shortint", "int", "longint"):
+    * These are signed 2-state integer types with increasing bit widths:
+        . "shortint" : 16-bit signed integer.
+        . "int"      : 32-bit signed integer.
+        . "longint"  : 64-bit signed integer.
+
+5. Signed and Unsigned:
+    * Signed types can represent both positive and negative numbers.
+    * Unsigned types can only represent non-negative values (0 and positive numbers).
+    * The sign can be explicitly defined using "signed" or "unsigned".
+    * Syntax Examples:
+        > byte          s_byte; // Signed by default
+        > byte unsigned u_byte; // Unsigned explicitly
+
+6. Sign Cast:
+    * Converts between signed and unsigned types using casting.
+    * Syntax Examples:
+        > signed'(var_name);
+        > unsigned'(var_name);
