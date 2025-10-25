@@ -1,0 +1,26 @@
+1. Specialized Procedural Blocks in SystemVerilog:
+    * Verilog's general-purpose "always" block can model many hardware types and algorithmic behavior.
+    * However, synthesis tools cannot determine whether an "always" block represents combinational, latch, or sequential logic.
+    * Mixing different types of logic in one "always" block can cause synthesis errors or warnings.
+    * SystemVerilog introduces three specialized procedural blocks to eliminate ambiguity:
+        . "always_comb"  : Used for combinational logic.
+        . "always_latch" : Used for latch-based logic.
+        . "always_ff"    : Used for sequential (flip-flop) logic.
+
+2. always_comb:
+    * Represents purely combinational logic.
+    * No need to specify a sensitivity list - the tool automatically detects all signals used inside the block.
+    * Sensitive to signals used directly and those used inside functions (fixes @(*) limitation from Verilog).
+    * Prevents multiple procedural drivers on the same variable.
+
+3. always_latch:
+    * Represents latch-based storage elements.
+    * Similar to "always_comb" but used when incomplete assignments are intentional.
+    * Automatically infers the sensitivity list.
+    * Executes once at time zero to initialize latch outputs.
+
+4. always_ff:
+    * Used to model sequential logic (flip-flops).
+    * Requires an explicit sensitivity list with "clock" and optional "reset" signals.
+    * Clearly defines synchronous or asynchronous behavior.
+    * Prevents mixing of blocking and non-blocking assignments.
