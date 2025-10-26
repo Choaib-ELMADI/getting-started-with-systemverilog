@@ -20,3 +20,6 @@
 >> fork ... join: Used to execute multiple processes in parallel. The simulation waits until all processes finish before continuing.
 >> fork ... join_any: Starts multiple processes in parallel, but continues once any one of them finishes.
 >> fork ... join_none: Starts multiple processes in parallel and immediately continues without waiting for any to complete.
+
+>> $monitor(): Continuously monitors and prints the value of variables whenever they change.
+>> $bits(): Returns the number of bits required to represent a given data type or variable.
