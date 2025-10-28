@@ -1,0 +1,36 @@
+1. SystemVerilog String:
+    * The "string" data type is an ordered collection of characters.
+    * The length of a string can change dynamically during simulation.
+    * Syntax Example:
+        > string variable_name [= initial_value];
+
+2. Strings in Verilog:
+    * Each ASCII character requires 8 bits (1 byte).
+    * Strings in Verilog are stored as packed arrays of bytes.
+    * Extra bits are padded with zeros if the string is shorter.
+    * If the string is too long, it is truncated from the most significant bits.
+    * Syntax Example:
+        > reg [16*8-1:0] my_string;         // 16 characters
+        > my_string = "How are you";        // fits
+        > my_string = "How are you doing?"; // truncated
+
+3. String Operators:
+    * Strings can be compared, concatenated, and indexed.
+    * Common operations include:
+        . Indexing:      Str[index]
+        . Equality:      Str1 == Str2
+        . Inequality:    Str1 != Str2
+        . Comparison:    Str1 < Str2, ...
+        . Replication:   {N{Str}}
+        . Method call:   Str.method(arguments)
+        . Concatenation: {Str1, Str2, ..., StrN}
+
+4. Basic String Methods:
+    * len():        Returns the number of characters in the string.
+    * putc(i, c):   Replaces the character at index "i" with "c".
+    * getc(i):      Returns the ASCII code of the character at index "i".
+    * tolower():    Converts all characters to lowercase.
+    * compare(s):   Compares two strings (like strcmp in C).
+    * icompare(s):  Case-insensitive comparison.
+    * substr(i, j): Returns a substring from index "i" to "j".
+    * String conversion methods...
