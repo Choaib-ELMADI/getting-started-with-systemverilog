@@ -1,0 +1,39 @@
+1. Enumerated Types:
+    * Enumerated types define a set of named constant values.
+    * By default, the first name starts with 0, and subsequent names increment by 1.
+    * They improve code readability and reduce errors when working with constant values.
+    * Syntax Examples:
+        > enum {RED, YELLOW, GREEN} light_1;          // RED=0, YELLOW=1, GREEN=2
+        > enum bit[1:0] {RED, YELLOW, GREEN} light_2; // 2-bit type
+        > enum {RED=3, YELLOW, GREEN} light_3;        // RED=3, YELLOW=4, GREEN=5
+
+2. Typedef with Enumerations:
+    * A "typedef" can be used to define a custom enumerated type for reuse.
+    * Syntax Examples:
+        > typedef enum {TRUE, FALSE} e_true_false;
+        > e_true_false answer;
+        > answer = TRUE;
+
+3. Enumerated-Type Ranges:
+    * SystemVerilog allows automatic generation of multiple named constants.
+    * Supported formats:
+        . name          — starts from 0 and increments by 1
+        . name = C      — assigns constant value C
+        . name[N]       — creates N constants (name0, name1, ...)
+        . name[N] = C   — starts from C and increments
+        . name[N:M]     — creates nameN ... nameM
+        . name[N:M] = C — starts from C and increments to nameM
+
+4. Enumerated-Type Methods:
+    * SystemVerilog provides built-in methods to iterate and inspect enum values.
+    * Common methods:
+        . first()   → returns the first value.
+        . last()    → returns the last value.
+        . next(N=1) → returns the Nth next value.
+        . prev(N=1) → returns the Nth previous value.
+        . num()     → returns the number of values in the enumeration.
+        . name()    → returns the string name of the current value.
+
+5. Type Checking:
+    * Enumerations are strongly typed.
+    * Assigning an invalid integer value causes a compilation error unless explicitly cast.
