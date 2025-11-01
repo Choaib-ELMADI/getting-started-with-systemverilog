@@ -15,4 +15,4 @@ module enum_case_example;
 
     end
 
-endmodule // enum_case_example
+endmodule

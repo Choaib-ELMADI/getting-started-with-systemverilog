@@ -1,0 +1,20 @@
+1. Array Manipulation Overview:
+    * SystemVerilog provides several built-in methods for searching, filtering, ordering, and reducing arrays.
+    * These methods can be used with static, dynamic, or associative arrays.
+
+2. Array Locator Methods:
+    * These methods locate, filter, or identify array elements based on a given condition.
+    * They do not modify the original array.
+    * Some require a mandatory "with" clause, while others accept it as optional.
+    * Methods with mandatory "with" clause: find, find_index, find_first, find_first_index, find_last, find_last_index
+    * Methods with optional "with" clause: min, max, unique, unique_index
+
+3. Array Ordering Methods:
+    * These methods modify the original array directly.
+    * They reorder or randomize elements according to their purpose.
+    * Available methods: reverse, sort, rsort, shuffle
+
+4. Array Reduction Methods:
+    * These methods perform bitwise or arithmetic reduction operations across array elements.
+    * They return a single value as the result.
+    * Available methods: sum, product, and, or, xor

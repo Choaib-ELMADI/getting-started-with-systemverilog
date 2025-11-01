@@ -21,4 +21,4 @@ module enum_tb;
     typedef enum { GREEN_t, YELLOW_t, RED_t } color_t;
     color_t my_color;
 
-endmodule // enum_tb
+endmodule
