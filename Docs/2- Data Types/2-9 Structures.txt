@@ -1,0 +1,40 @@
+1. Introduction to Structures:
+    * A structure is a collection of variables of different data types grouped together under a single name.
+    * Each element inside the structure is called a "member" and can be accessed individually using the dot (.) operator.
+    * Syntax Example:
+        > struct {
+            <list of variables>;
+        } struct_name;
+
+2. Unpacked Structures:
+    * Structures are unpacked by default.
+    * Each member is stored independently (not bit-packed).
+    * Members can be of any type, including arrays and other structures.
+    * Unpacked structures are useful for grouping data of mixed types logically.
+
+3. Typedef Structures:
+    * Typedef allows creating a user-defined data type for a structure.
+    * Useful when you need to declare multiple variables with the same structure definition.
+    * Once typedef is used, the structure can be declared like any other data type.
+    * Syntax Example:
+        > typedef struct {
+            <list of variables>;
+        } type_name;
+
+4. Packed Structures:
+    * A packed structure stores all members contiguously in memory (bit-wise packed).
+    * All members must be of fixed-size data types (bit, logic, reg, etc.).
+    * The first member is the most significant, and the following members are arranged in decreasing order of significance.
+    * A packed structure behaves like a single bit vector, allowing bit-level operations.
+    * Syntax Example:
+        > typedef struct packed {
+            bit [3:0] mode;
+            bit [2:0] cfg;
+            bit       en;
+        } st_ctrl;
+
+5. Array of Structures:
+    * An array of structures can be created using any array type:
+        . Fixed array
+        . Dynamic array
+        . Associative array
