@@ -1,0 +1,26 @@
+1. Introduction to Typedef:
+    * "typedef" can be used to create a new name (alias) for an existing data type.
+    * It simplifies long or repetitive type declarations.
+    * It helps improve code readability and maintainability.
+    * Syntax Example:
+        > typedef existing_type new_type_name;
+
+2. Typedef with Structures and Enums:
+    * "typedef" can also be used to name structures or enumerations for reuse.
+    * Syntax Examples:
+        > typedef enum { IDLE, RUN, STOP } state_t;
+        > typedef struct {
+            int       id;
+            bit [7:0] value;
+        } packet_t;
+
+3. Introduction to Alias:
+    * "alias" provides a new name (reference) to an existing variable, signal, or net.
+    * Both names point to the same storage — updating one updates the other.
+    * It improves readability and reduces redundancy in hierarchical connections.
+    * Syntax Example:
+        > alias new_name = existing_name;
+
+4. Key Differences:
+    * "typedef" creates a new type name — used at compile time.
+    * "alias" creates a new name for an existing variable — used at runtime.
