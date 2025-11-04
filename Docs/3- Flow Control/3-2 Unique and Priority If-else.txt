@@ -1,0 +1,45 @@
+1. Introduction to Conditional Constructs:
+    * SystemVerilog provides enhanced conditional statements like "unique", "unique0", and "priority".
+    * These constructs help detect coding issues such as overlapping or missing condition matches.
+    * Syntax Example:
+        > unique if (condition)
+        > unique0 if (condition)
+        > priority if (condition)
+
+2. unique-if:
+    * Evaluates conditions in any order.
+    * Reports an error when "no condition matches" and "no else block" exists.
+    * Reports an error when "multiple conditions match".
+    * Ensures mutual exclusivity and complete coverage.
+    * Syntax Example:
+        > unique if (condition1)
+        >   statement1;
+        > else if (condition2)
+        >   statement2;
+        > else
+        >   statement3;
+
+3. unique0-if:
+    * Similar to "unique-if" but does not report a violation when "no condition matches".
+    * Useful when none of the conditions might be true under certain cases.
+    * Syntax Example:
+        > unique0 if (condition1)
+        >   statement1;
+        > else if (condition2)
+        >   statement2;
+
+4. priority-if:
+    * Evaluates conditions sequentially (top to bottom).
+    * Reports an error when "none of the conditions match" and "no else clause" exists.
+    * Execution stops after the "first true condition" (no parallel evaluation).
+    * Syntax Example:
+        > priority if (condition1)
+        >   statement1;
+        > else if (condition2)
+        >   statement2;
+        > else
+        >   statement3;
+
+5. Key Differences Between unique-if and priority-if:
+    * "unique-if" checks for multiple true conditions (mutual exclusivity).
+    * "priority-if" checks for missing else conditions (completeness).
