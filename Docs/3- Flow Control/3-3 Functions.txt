@@ -1,0 +1,41 @@
+1. Introduction to Functions:
+    * A function is used to perform a specific operation and return a value that can be used in an expression.
+    * SystemVerilog functions follow similar rules as Verilog functions.
+    * Functions cannot consume simulation time — they cannot include "@", "#", "wait", or "fork-join" statements.
+    * Functions cannot start a task since tasks can consume simulation time.
+
+2. ANSI-C Style Declaration:
+    * SystemVerilog allows defining functions using ANSI-C style syntax.
+    * The return type is specified before the function name, and the arguments are listed with their data types.
+    * Functions can return values directly or using the "return" keyword.
+    * Syntax Example:
+        > function [return_type] function_name ([input/output arguments]);
+        >   [function_body]
+        > endfunction
+
+3. Using Declarations and Directions:
+    * SystemVerilog still supports the old-style Verilog declaration for function arguments.
+    * Function ports can be declared as "input", "output", or "inout" either inside the body or inline.
+    * Input ports are read-only, output ports provide returned data, and inout ports allow bidirectional data flow.
+    * Syntax Example:
+        > function [return_type] function_name;
+        >   input  [type] var1, var2;
+        >   output [type] var3;
+        >   [function_body]
+        > endfunction
+
+4. Passing Arguments by Value:
+    * This is the default method of passing arguments.
+    * The argument is copied into the subroutine area — modifications inside the function do not affect the original variable.
+    * Changes made to the local copy are lost when the function exits.
+
+5. Passing Arguments by Reference:
+    * Arguments can be passed by reference using the "ref" keyword.
+    * No copy is made — the function directly accesses and modifies the original variable.
+    * Any modification inside the function is reflected outside.
+    * The function must be declared "automatic" when using references.
+    * Syntax Example:
+        > function automatic [type] fn (ref [type] a);
+        >   a = a + 5; // modifies original variable
+        >   return a * 10;
+        > endfunction
