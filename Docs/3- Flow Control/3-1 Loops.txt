@@ -1,0 +1,51 @@
+1. Introduction to Loops:
+    * A loop is a block of code that executes repeatedly.
+    * Loops usually include a condition to terminate execution.
+    * If the loop has no terminating condition, simulation may hang indefinitely.
+
+2. Forever Loop:
+    * Executes continuously without stopping.
+    * Must include a time delay or simulation control to prevent hanging.
+    * Syntax Example:
+        > forever begin
+        > end
+
+3. Repeat Loop:
+    * Executes a block of code a specified number of times.
+    * Syntax Example:
+        > repeat (5) begin
+        > end
+
+4. While Loop:
+    * Executes a block repeatedly while a condition is true.
+    * Condition is evaluated before each iteration.
+    * Syntax Example:
+        > while (counter < 10) begin
+        >   @(posedge clk);
+        >   counter++;
+        > end
+
+5. For Loop:
+    * Combines initialization, condition, and increment in one line.
+    * Often used as a condensed form of a while loop.
+    * Syntax Example:
+        > for (counter = 2; counter < 14; counter = counter + 2) begin
+        >   @(posedge clk);
+        > end
+
+6. Do-While Loop:
+    * Executes the block first, then checks the condition.
+    * Ensures the block runs at least once.
+    * Syntax Example:
+        > do begin
+        >   @(posedge clk);
+        >   counter++;
+        > end while (counter < 5);
+
+7. Foreach Loop:
+    * Designed to iterate through all elements of an array.
+    * No need to manually manage indices or array size.
+    * Syntax Example:
+        > foreach (array[index]) begin
+        >   array[index] = index;
+        > end
