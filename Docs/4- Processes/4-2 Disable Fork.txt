@@ -1,0 +1,8 @@
+1. Introduction to "disable fork":
+    * Used to terminate all active threads that were spawned using a "fork...join" construct.
+    * Helps in stopping background or long-running threads when they're no longer needed.
+    * Useful for avoiding unnecessary simulation activity.
+
+2. Why disable a fork?
+    * When a "fork...join_any" block finishes, the remaining threads continue to run.
+    * Sometimes these remaining threads are no longer needed, so "disable fork" is used to stop them.
