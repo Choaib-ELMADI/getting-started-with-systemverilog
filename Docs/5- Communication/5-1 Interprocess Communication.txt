@@ -1,0 +1,36 @@
+1. Overview:
+    * Interprocess communication allows multiple processes in a testbench to synchronize, share data, or control resource access.
+    * SystemVerilog provides three main mechanisms for this: "events", "semaphores", and "mailboxes".
+
+2. Events:
+    * Events are used for "synchronization" between threads.
+    * One process triggers the event, and another waits for it:
+        . Creation   : event eventA;
+        . Triggering : ->eventA;
+        . Waiting    : @eventA; "or" wait(eventA.triggered);
+
+3. Semaphores:
+    * Semaphores manage "mutual exclusion" (mutex) for shared resources, similar to locks in software programming.
+    * Created with "semaphore key = new(N);" where "N" is the number of keys.
+
+    * Blocking and Non-blocking Methods:
+        . get(n): Blocking method; waits until n tokens are available.
+        . try_get(n): Non-blocking method; returns immediately if n tokens are unavailable.
+        . put(n): Releases n tokens back to the semaphore.
+
+4. Mailboxes:
+    * Mailboxes provide a "data-passing mechanism" between threads or components.
+    * Commonly used in testbenches to transfer data between generators, drivers, monitors, and scoreboards safely.
+    * Operates as a FIFO (First In, First Out) buffer, messages are sent and received in order.
+    * Supports thread synchronization, the receiver waits if the mailbox is empty.
+
+    * Blocking and Non-blocking Methods:
+        . put(): Puts a message into the mailbox.
+        . get(): Blocking method; waits until a message is available.
+        . try_get(): Non-blocking method; returns immediately if no message is available.
+        . num(): Returns the number of messages currently stored in the mailbox.
+
+    * Syntax Examples:
+        > mailbox gen2drv;      // mailbox between generator and driver
+        > gen2drv.put(trans);   // put transaction into mailbox
+        > gen2drv.get(trans);   // blocking get() call

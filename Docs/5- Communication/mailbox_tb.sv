@@ -21,7 +21,7 @@ class receiver;
 endclass // receiver
 
 module mailbox_tb;
-    mailbox  mbx = new();
+    mailbox  mbx;
     sender   s;
     receiver r;
 
