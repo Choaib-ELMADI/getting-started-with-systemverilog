@@ -1,0 +1,32 @@
+1. SystemVerilog Events:
+    * Events are static object handles used to synchronize between two or more concurrently active processes.
+    * One process triggers the event, while another waits for it.
+    * They can be assigned, compared, or even set to "null".
+    * When one event variable is assigned to another, both refer to the same synchronization object.
+    * Events can be passed to queues, functions, or tasks.
+    * Syntax Examples:
+        > event over;               // new event created
+        > event over_again = over;  // alias to "over"
+        > event empty = null;       // event variable with no object
+
+2. Triggering and Waiting for Events:
+    * Events can be triggered using the "->" or "->>" operator.
+    * Processes can wait for an event using "@" or the ".triggered" property.
+
+3. Difference Between '@' and '.triggered':
+    * "@event_a" waits for the next event trigger only.
+    * ".triggered" ensures the process unblocks even if trigger and wait happen simultaneously.
+    * Using ".triggered" avoids race conditions between triggering and waiting.
+
+4. 'wait_order':
+    * The "wait_order" statement waits for a sequence of events to occur in a specific order.
+    * If any event is triggered out of order, an error message is issued.
+    * Syntax Example:
+        > wait_order(a, b, c)
+        >   $display("");
+        > else
+        >   $display("");
+
+5. Merging Events:
+    * When one event variable is assigned to another, both become linked.
+    * Any process waiting on either event will resume when the shared event is triggered.
