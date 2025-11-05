@@ -1,0 +1,8 @@
+1. Purpose:
+    * The "wait fork" statement is used to make the main process wait until all forked child processes have completed.
+    * It is especially useful when multiple threads are spawned using "fork" and you need to perform certain actions only after all of them are finished.
+
+2. Behavior:
+    * The main process continues execution until it reaches the "wait fork" statement.
+    * When it does, it pauses until every child process created by any "fork" statement has terminated.
+    * This includes threads spawned by previous "fork" blocks that are still running.
