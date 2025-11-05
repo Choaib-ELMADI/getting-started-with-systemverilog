@@ -23,3 +23,4 @@
 
 >> $monitor(): Continuously monitors and prints the value of variables whenever they change.
 >> $bits(): Returns the number of bits required to represent a given data type or variable.
+>> $sformatf("String_%0d", i): Formats and returns a string.

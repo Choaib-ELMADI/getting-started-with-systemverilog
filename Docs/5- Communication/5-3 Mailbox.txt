@@ -1,0 +1,29 @@
+1. Mailbox Overview:
+    * A mailbox in SystemVerilog allows different processes to exchange data safely.
+    * Works like a real mailbox: one process puts messages, another retrieves them.
+    * Can be bounded (limited size) or unbounded (no size limit).
+    * Two main types:
+        . Generic mailbox: accepts any data type.
+        . Parameterized mailbox: accepts only a specific data type.
+
+2. Mailbox vs Queue:
+    * A mailbox behaves like a queue but provides atomic control using semaphores.
+    * You cannot access elements by index in a mailbox — only in FIFO order.
+    * A queue allows indexed access and does not manage synchronization.
+
+3. Mailbox Functions and Methods:
+    * new(int bound = 0) → Creates a mailbox; bound > 0 limits queue size.
+    * num()              → Returns current number of messages.
+    * put(item)          → Blocking insert; waits if mailbox is full.
+    * try_put(item)      → Non-blocking insert; returns 1 if successful.
+    * get(ref item)      → Blocking retrieve; waits if mailbox is empty.
+    * try_get(ref item)  → Non-blocking retrieve; returns 0 if empty.
+    * peek(ref item)     → Copies (but doesn't remove) one message.
+    * try_peek(ref item) → Non-blocking version of peek.
+
+4. Parameterized Mailboxes:
+    * Default mailboxes are typeless, allowing mixed data types.
+    * To enforce type safety, mailboxes can be parameterized.
+    * Syntax Example:
+        > typedef mailbox #(string) s_mbox;
+        > s_mbox my_box = new();
